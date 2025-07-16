@@ -73,8 +73,8 @@ const About = () => {
 
   const stats = [
     { label: "Projects Completed", value: "15+", color: "tech-blue" },
-    { label: (<a href="https://leetcode.com/u/Aditya_Makwana/" target="_blank" rel="noopener noreferrer" className="underline text-tech-green hover:text-tech-green/80">LeetCode Problems</a>), value: "600+", color: "tech-green" },
-    { label: "Technologies", value: "20+", color: "tech-purple" },
+    { label: (<a href="https://leetcode.com/u/Aditya_Makwana/" target="_blank" rel="noopener noreferrer" className="underline text-tech-green hover:text-tech-green/80">LeetCode Problems</a>), value: "800+", color: "tech-green" },
+    { label: "Technologies", value: "10+", color: "tech-purple" },
     { label: "Years Learning", value: "2+", color: "tech-orange" }
   ];
 
@@ -150,7 +150,7 @@ const About = () => {
             About Me
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I've solved over 600 problems on LeetCode, maintained an 8.76 CPI, and gained real-world experience 
+            I've solved over 800 problems on LeetCode, maintained an 8.76 CPI, and gained real-world experience 
             through internships and hackathons. I'm passionate about creating innovative web solutions.
           </p>
         </div>
