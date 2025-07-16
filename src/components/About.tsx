@@ -15,11 +15,11 @@ const About = () => {
   const achievements = [
     {
       icon: <Code className="h-8 w-8 text-tech-blue" />,
-      title: "LeetCode Champion",
-      description: "Solved 600+ problems with rank 85,000",
+      title: "LeetCode",
+      description: "Solved 800+ problems with rank 35,000",
       details: (
         <>
-          JavaScript, Java, Data Structures & Algorithms<br />
+          JavaScript, Data Structures & Algorithms,database basic<br />
           <a href="https://leetcode.com/u/Aditya_Makwana/" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">View my LeetCode</a>
         </>
       )
@@ -27,7 +27,7 @@ const About = () => {
     {
       icon: <Trophy className="h-8 w-8 text-tech-green" />,
       title: "Hackathon Winner",
-      description: "2nd Prize at LDRP College Hackathon",
+      description: "2nd Prize at LDRP College Hackathon & finalist At DA-IICT hackathon",
       details: "Recognized for innovation and problem-solving skills"
     },
     {
