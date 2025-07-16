@@ -19,15 +19,15 @@ const Navigation = () => {
     // Animate navigation on load
     gsap.fromTo('.nav-container', 
       {
-        y: -100,
+        y: -60,
         opacity: 0
       },
       {
         y: 0,
         opacity: 1,
-        duration: 0.8,
-        ease: "power2.out",
-        delay: 0.5
+        duration: 1.2,
+        ease: "power4.out",
+        delay: 0.2
       }
     );
 
@@ -58,21 +58,36 @@ const Navigation = () => {
   };
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
-    
-    if (!isOpen) {
-      gsap.fromTo('.mobile-menu', 
-        {
+    setIsOpen((prev) => {
+      if (prev) {
+        gsap.to('.mobile-menu', {
           opacity: 0,
-          y: -20
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.3,
-          ease: "power2.out"
-        }
-      );
+          y: -20,
+          duration: 0.35,
+          ease: 'power2.in',
+          onComplete: () => setIsOpen(false)
+        });
+        return true; // keep open until animation finishes
+      } else {
+        setTimeout(() => {
+          gsap.fromTo('.mobile-menu', 
+            {
+              opacity: 0,
+              y: -20
+            },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.35,
+              ease: "power2.out"
+            }
+          );
+        }, 0);
+        return false;
+      }
+    });
+    if (!isOpen) {
+      // open menu (handled above)
     }
   };
 
@@ -111,9 +126,10 @@ const Navigation = () => {
                 }`}
               >
                 {item.name}
-                {activeSection === item.href.substring(1) && (
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full"></span>
-                )}
+                <span
+                  className={`absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full transition-all duration-500 ${activeSection === item.href.substring(1) ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-50'}`}
+                  style={{transformOrigin: 'left'}}
+                ></span>
               </a>
             ))}
           </div>

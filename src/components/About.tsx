@@ -17,7 +17,12 @@ const About = () => {
       icon: <Code className="h-8 w-8 text-tech-blue" />,
       title: "LeetCode Champion",
       description: "Solved 600+ problems with rank 85,000",
-      details: "JavaScript, Java, Data Structures & Algorithms"
+      details: (
+        <>
+          JavaScript, Java, Data Structures & Algorithms<br />
+          <a href="https://leetcode.com/u/Aditya_Makwana/" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">View my LeetCode</a>
+        </>
+      )
     },
     {
       icon: <Trophy className="h-8 w-8 text-tech-green" />,
@@ -68,7 +73,7 @@ const About = () => {
 
   const stats = [
     { label: "Projects Completed", value: "15+", color: "tech-blue" },
-    { label: "LeetCode Problems", value: "600+", color: "tech-green" },
+    { label: (<a href="https://leetcode.com/u/Aditya_Makwana/" target="_blank" rel="noopener noreferrer" className="underline text-tech-green hover:text-tech-green/80">LeetCode Problems</a>), value: "600+", color: "tech-green" },
     { label: "Technologies", value: "20+", color: "tech-purple" },
     { label: "Years Learning", value: "2+", color: "tech-orange" }
   ];

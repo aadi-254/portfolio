@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send, Code } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,16 +19,9 @@ const Contact = () => {
     {
       icon: <Mail className="h-6 w-6 text-tech-blue" />,
       title: "Email",
-      value: "aditya.makwana@example.com",
+      value: "adityamakwana254@gmail.com",
       description: "Feel free to reach out anytime",
-      link: "mailto:aditya.makwana@example.com"
-    },
-    {
-      icon: <Phone className="h-6 w-6 text-tech-green" />,
-      title: "Phone",
-      value: "+91 XXXXX XXXXX",
-      description: "Available for calls",
-      link: "tel:+91XXXXXXXXX"
+      link: "mailto:adityamakwana254@gmail.com"
     },
     {
       icon: <MapPin className="h-6 w-6 text-tech-purple" />,
@@ -36,6 +29,13 @@ const Contact = () => {
       value: "Gandhinagar, Gujarat",
       description: "Available for local meetings",
       link: "#"
+    },
+    {
+      icon: <Code className="h-6 w-6 text-tech-orange" />,
+      title: "LeetCode",
+      value: "leetcode.com/u/Aditya_Makwana/",
+      description: "Check out my LeetCode profile",
+      link: "https://leetcode.com/u/Aditya_Makwana/"
     }
   ];
 
@@ -43,20 +43,20 @@ const Contact = () => {
     {
       icon: <Github className="h-5 w-5" />,
       label: "GitHub",
-      url: "https://github.com/adityamakwana",
+      url: "https://github.com/aadi-254",
       color: "hover:bg-tech-blue/20"
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: "LinkedIn",
-      url: "https://linkedin.com/in/adityamakwana",
+      url: "https://www.linkedin.com/in/aditya-makwana-527850280/",
       color: "hover:bg-tech-green/20"
     },
     {
-      icon: <Twitter className="h-5 w-5" />,
-      label: "Twitter",
-      url: "https://twitter.com/adityamakwana",
-      color: "hover:bg-tech-purple/20"
+      icon: <Code className="h-5 w-5" />,
+      label: "LeetCode",
+      url: "https://leetcode.com/u/Aditya_Makwana/",
+      color: "hover:bg-tech-orange/20"
     }
   ];
 

@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github, Users, ShoppingCart, MapPin, Video, Star, Globe } from 'lucide-react';
+import { Description } from '@radix-ui/react-toast';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,78 +15,65 @@ const Projects = () => {
 
   const projects = [
     {
-      icon: <Users className="h-8 w-8 text-tech-blue" />,
-      title: "Whisperloud - Social Media Platform",
-      description: "A complete social media website where people can share their thoughts and interact with the world. Built with modern web technologies.",
+      icon: <Video className="h-8 w-8 text-tech-blue" />,
+      title: "SKILLSWAP : Video Streaming SKILL swapping platform",
+      description: `A plateform where you can create a profile and learn new skills and share your skills with others via video call and chat with any person you like.`,
       type: "Full Stack",
-      tech: ["React.js", "Node.js", "MongoDB", "Express.js", "Socket.io"],
+      tech: ["Node.js", "Express.js", "Full-Stack Development", "JavaScript",  "MySQL", "React.js", "Socket.io", "Web Development"],
       status: "Completed",
       color: "tech-blue",
       links: {
-        github: "#",
+        github: "https://github.com/aadi-254/skillSwapper",
         live: "#"
       }
     },
     {
-      icon: <ShoppingCart className="h-8 w-8 text-tech-green" />,
-      title: "Buy and Sell Platform",
-      description: "A marketplace where people can list unwanted items and earn money by selling them at affordable prices to other users.",
+      icon: <Users className="h-8 w-8 text-tech-green" />,
+      title: "WhisperLoud",
+      description : `I created an entire Social media website named "Whisperloud" . Where people can share their thoughts and interact with the world via post and comment.`,
       type: "Full Stack",
-      tech: ["React.js", "Node.js", "MySQL", "Express.js", "Payment Gateway"],
-      status: "In Progress",
+      tech: ["Node.js", "MySQL","Embedded JavaScript (EJS)", "GreenSock Animation Platform (GSAP)",  "Express.js", "Full-Stack Development"],
+      status: "Completed",
       color: "tech-green",
       links: {
-        github: "#",
+        github: "https://github.com/aadi-254/whisperLoud.git",
         live: "#"
       }
     },
     {
       icon: <MapPin className="h-8 w-8 text-tech-purple" />,
-      title: "Tourism Guide Platform",
-      description: "A comprehensive tourism website providing information about destinations, guidance, and travel recommendations.",
+      title: "Browser Based OS",
+      description: `It's a small Browser based operating system with basic features of real world OS which helps a users to work on same OS at same time.`,
       type: "Full Stack",
-      tech: ["React.js", "Node.js", "MongoDB", "Maps API", "Weather API"],
+      tech: [ "React.js","express js" ,"Node.js", "Socket.io",  "Critical Thinking",  "File Management"],
       status: "Completed",
       color: "tech-purple",
       links: {
-        github: "#",
+        github: "https://github.com/aadi-254/BrowserOS-AOS",
         live: "#"
       }
     },
     {
-      icon: <Video className="h-8 w-8 text-tech-orange" />,
-      title: "Video & Chat Conferencing",
-      description: "A platform for multi-user video conferencing with real-time chat functionality and collaboration tools.",
-      type: "Backend",
-      tech: ["Node.js", "Socket.io", "WebRTC", "Express.js", "MongoDB"],
+      icon: <Globe className="h-8 w-8 text-accent" />,
+      title: "Game zone",
+      description: `In this website, you will find multiple different basic games , like TIC-TAC-TOE, snake-ladder, sudoku, snake, balloon blaster etc.. This website is also helpful to beginner frontend developer student.`,
+      type: "Frontend",
+      tech: ["Front-End Development", "Critical Thinking", "JavaScript Libraries", "HTML", "Cascading Style Sheets (CSS)"],
       status: "Completed",
-      color: "tech-orange",
+      color: "accent",
       links: {
-        github: "#",
+        github: "https://github.com/aadi-254/gameZone",
         live: "#"
       }
     },
     {
       icon: <Star className="h-8 w-8 text-primary" />,
       title: "Rate The Players",
-      description: "A cricket fan platform where users can rate players and view top 10 most rated players through advanced algorithms.",
+      description: `it is a web site , specifically made for cricket lovers. In this you can rate your favourite different players as much as you want . You are not the only one, there are many users who are rating other players and, there is a box which show top 10 highest rated player`,
       type: "Backend",
-      tech: ["Node.js", "MongoDB", "Express.js", "Algorithm Design", "REST API"],
+      tech: ["Front-End Development", "Node.js", "Socket.io", "Express.js"],
       status: "Completed",
       color: "primary",
-      links: {
-        github: "#",
-        live: "#"
-      }
-    },
-    {
-      icon: <Globe className="h-8 w-8 text-accent" />,
-      title: "Brand Reimagination",
-      description: "Redesigned and recreated multiple brand websites with modern UI/UX, including iPhone and other major brands.",
-      type: "Frontend",
-      tech: ["React.js", "Three.js", "GSAP", "Tailwind CSS", "Framer Motion"],
-      status: "Completed",
-      color: "accent",
       links: {
         github: "#",
         live: "#"
@@ -207,14 +195,21 @@ const Projects = () => {
                   </div>
                 </div>
                 <div className="flex gap-2 mt-4">
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    className="flex-1 border-primary/30 hover:bg-primary/10"
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1"
                   >
-                    <Github className="h-4 w-4 mr-2" />
-                    Code
-                  </Button>
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      className="flex-1 border-primary/30 hover:bg-primary/10"
+                    >
+                      <Github className="h-4 w-4 mr-2" />
+                      Code
+                    </Button>
+                  </a>
                   <Button 
                     size="sm"
                     className="flex-1 bg-gradient-primary hover:shadow-glow"
@@ -233,7 +228,6 @@ const Projects = () => {
           <h3 className="text-2xl font-bold mb-6">Other Notable Projects</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              "Game Zone (Tic-Tac-Toe, Flappy Bird)",
               "Templates (E-commerce, Portfolio)",
               "TODO List & Weather App",
               "URL Shortener & Chat App"

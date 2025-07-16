@@ -1,7 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Download, Github, Linkedin, Mail } from 'lucide-react';
+
+const TYPING_NAME = "Aditya Makwana";
+const TYPING_CYCLES = 5; // can improve cycle to make animation longer
 
 const Hero = () => {
   const heroRef = useRef<HTMLElement>(null);
@@ -9,6 +12,12 @@ const Hero = () => {
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const socialRef = useRef<HTMLDivElement>(null);
+  const [typedName, setTypedName] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState<'forward' | 'backward'>('forward');
+  const [cycle, setCycle] = useState(0);
+  const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
     if (!heroRef.current) return;
@@ -57,11 +66,50 @@ const Hero = () => {
     });
   }, []);
 
+  useEffect(() => {
+    if (isDone) return;
+    if (cycle >= TYPING_CYCLES && direction === 'forward' && index === TYPING_NAME.length) {
+      setIsDone(true);
+      return;
+    }
+    const delay = direction === 'forward' ? 100 : 60;
+    let timeout = setTimeout(() => {
+      if (direction === 'forward') {
+        if (index < TYPING_NAME.length) {
+          setIndex(index + 1);
+        } else {
+          setTimeout(() => setDirection('backward'), 700);
+        }
+      } else {
+        if (index > 0) {
+          setIndex(index - 1);
+        } else {
+          setCycle(cycle + 1);
+          setTimeout(() => setDirection('forward'), 700);
+        }
+      }
+    }, delay);
+    return () => clearTimeout(timeout);
+  }, [index, direction, cycle, isDone]);
+
+  useEffect(() => {
+    setTypedName(TYPING_NAME.slice(0, index));
+  }, [index]);
+
+  // Blinking cursor effect
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      setShowCursor((prev) => !prev);
+    }, 500);
+    return () => clearInterval(cursorInterval);
+  }, []);
+
   return (
     <section 
       ref={heroRef}
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-hero"
+      style={{marginTop: '50px'}}
     >
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-20">
@@ -78,7 +126,12 @@ const Hero = () => {
           >
             Hi, I'm{' '}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              Aditya Makwana
+              {typedName}
+              <span style={{ display: 'inline-block', width: '1ch', color: '#0ea5e9' }}>
+                {showCursor ? (
+                  <svg width="18" height="36" viewBox="0 0 18 36" style={{verticalAlign: 'middle'}}><rect width="4" height="28" x="7" y="4" rx="2" fill="#0ea5e9" /></svg>
+                ) : null}
+              </span>
             </span>
           </h1>
 
@@ -102,13 +155,15 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button 
-              size="lg" 
-              className="bg-gradient-primary hover:shadow-glow transition-all duration-300 group"
-            >
-              <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
-              Download Resume
-            </Button>
+            <a href="/resume.pdf" download>
+              <Button 
+                size="lg" 
+                className="bg-gradient-primary hover:shadow-glow transition-all duration-300 group"
+              >
+                <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
+                Download Resume
+              </Button>
+            </a>
             <Button 
               variant="outline" 
               size="lg"
@@ -121,7 +176,7 @@ const Hero = () => {
           {/* Social Links */}
           <div ref={socialRef} className="flex justify-center space-x-6 mb-12">
             <a 
-              href="https://github.com/adityamakwana" 
+              href="https://github.com/aadi-254" 
               className="p-3 rounded-full bg-secondary hover:bg-primary/20 transition-all duration-300 hover:scale-110"
               target="_blank"
               rel="noopener noreferrer"
@@ -129,7 +184,7 @@ const Hero = () => {
               <Github className="h-6 w-6" />
             </a>
             <a 
-              href="https://linkedin.com/in/adityamakwana" 
+              href="https://www.linkedin.com/in/aditya-makwana-527850280/" 
               className="p-3 rounded-full bg-secondary hover:bg-primary/20 transition-all duration-300 hover:scale-110"
               target="_blank"
               rel="noopener noreferrer"
@@ -137,7 +192,7 @@ const Hero = () => {
               <Linkedin className="h-6 w-6" />
             </a>
             <a 
-              href="mailto:aditya@example.com" 
+              href="mailto:adityamakwana254@gmail.com" 
               className="p-3 rounded-full bg-secondary hover:bg-primary/20 transition-all duration-300 hover:scale-110"
             >
               <Mail className="h-6 w-6" />
