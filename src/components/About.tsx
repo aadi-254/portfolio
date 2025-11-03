@@ -15,11 +15,11 @@ const About = () => {
   const achievements = [
     {
       icon: <Code className="h-8 w-8 text-tech-blue" />,
-      title: "LeetCode",
-      description: "Solved 800+ problems with rank 35,000",
+      title: "LeetCode Champion",
+      description: "Solved 1000+ problems with rank 25,000",
       details: (
         <>
-          JavaScript, Data Structures & Algorithms,database basic<br />
+          JavaScript, Python, Data Structures & Algorithms<br />
           <a href="https://leetcode.com/u/Aditya_Makwana/" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">View my LeetCode</a>
         </>
       )
@@ -27,7 +27,7 @@ const About = () => {
     {
       icon: <Trophy className="h-8 w-8 text-tech-green" />,
       title: "Hackathon Winner",
-      description: "2nd Prize at LDRP College Hackathon & finalist At DA-IICT hackathon",
+      description: "Hackathones : 4x Finalist ,1x Winner,7x Participant",
       details: "Recognized for innovation and problem-solving skills"
     },
     {
@@ -73,8 +73,9 @@ const About = () => {
 
   const stats = [
     { label: "Projects Completed", value: "15+", color: "tech-blue" },
-    { label: (<a href="https://leetcode.com/u/Aditya_Makwana/" target="_blank" rel="noopener noreferrer" className="underline text-tech-green hover:text-tech-green/80">LeetCode Problems</a>), value: "800+", color: "tech-green" },
-    { label: "Technologies", value: "10+", color: "tech-purple" },
+    { label: (<a href="https://leetcode.com/u/Aditya_Makwana/" target="_blank" rel="noopener noreferrer" className="underline text-tech-green hover:text-tech-green/80">LeetCode Problems</a>), value: "1000+", color: "tech-green" },
+    { label: (<a href="https://www.hackerrank.com/profile/adityamakwana254" target="_blank" rel="noopener noreferrer" className="underline text-tech-green hover:text-tech-green/80">Hackerrank</a>), value: "4⭐", color: "tech-green" },
+    { label: "Technologies", value: "20+", color: "tech-purple" },
     { label: "Years Learning", value: "2+", color: "tech-orange" }
   ];
 
@@ -150,7 +151,7 @@ const About = () => {
             About Me
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I've solved over 800 problems on LeetCode, maintained an 8.76 CPI, and gained real-world experience 
+            I've solved over 1000 problems on DSA (leetcode + hackerrank), maintained an 8.76 CPI, and gained real-world experience 
             through internships and hackathons. I'm passionate about creating innovative web solutions.
           </p>
         </div>
