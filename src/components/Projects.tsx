@@ -237,7 +237,7 @@ const Projects = () => {
                     size="sm"
                     className="flex-1 bg-gradient-primary hover:shadow-glow"
                   >
-                    <ExternalLink className="h-4 w-4 mr-2" />
+                    <ExternalLink className="h-4 w-4 " />
                     demo
                   </Button>
                   </a>
