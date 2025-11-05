@@ -44,7 +44,7 @@ const Skills = () => {
       icon: <Trophy className="h-8 w-8 text-primary" />,
       title: "Problem Solving & DSA",
       description: "Strong algorithmic thinking and problem-solving skills",
-      skills: ["600+ LeetCode Problems", "Data Structures", "Algorithms", "Rank 85,000"],
+      skills: ["1000+ LeetCode Problems","5⭐ HackerRank in DataStructure ", "Data Structures", "Algorithms"],
       color: "primary"
     },
     {
