@@ -229,6 +229,10 @@ const Projects = () => {
                       Code
                     </Button>
                   </a>
+                  <a  href={project.links.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1">
                   <Button 
                     size="sm"
                     className="flex-1 bg-gradient-primary hover:shadow-glow"
@@ -236,6 +240,7 @@ const Projects = () => {
                     <ExternalLink className="h-4 w-4 mr-2" />
                     demo
                   </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>
