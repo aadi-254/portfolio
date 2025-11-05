@@ -15,8 +15,8 @@ const About = () => {
   const achievements = [
     {
       icon: <Code className="h-8 w-8 text-tech-blue" />,
-      title: "LeetCode Champion",
-      description: "Solved 1000+ problems with rank 25,000",
+      title: "LeetCode / HackerRank ",
+      description: "Solved 1000+ problems and 5⭐ hackerRank(DSA)",
       details: (
         <>
           JavaScript, Python, Data Structures & Algorithms<br />
@@ -74,7 +74,7 @@ const About = () => {
   const stats = [
     { label: "Projects Completed", value: "15+", color: "tech-blue" },
     { label: (<a href="https://leetcode.com/u/Aditya_Makwana/" target="_blank" rel="noopener noreferrer" className="underline text-tech-green hover:text-tech-green/80">LeetCode Problems</a>), value: "1000+", color: "tech-green" },
-    { label: (<a href="https://www.hackerrank.com/profile/adityamakwana254" target="_blank" rel="noopener noreferrer" className="underline text-tech-green hover:text-tech-green/80">Hackerrank</a>), value: "4⭐", color: "tech-green" },
+    { label: (<a href="https://www.hackerrank.com/profile/adityamakwana254" target="_blank" rel="noopener noreferrer" className="underline text-tech-green hover:text-tech-green/80">Hackerrank</a>), value: "5⭐", color: "tech-green" },
     { label: "Technologies", value: "20+", color: "tech-purple" },
     { label: "Years Learning", value: "2+", color: "tech-orange" }
   ];
