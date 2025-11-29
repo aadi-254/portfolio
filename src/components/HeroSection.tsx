@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import Scene3D from './Scene3D';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Download } from 'lucide-react';
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -79,16 +79,26 @@ export default function HeroSection() {
         
         <div ref={ctaRef} className="flex items-center justify-center gap-4 flex-wrap">
           <a
-            href="#projects"
-            className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold hover:shadow-[0_0_40px_hsl(185_100%_50%/0.5)] transition-all duration-300 transform hover:scale-105"
+            href="/Aditya_Makwana_Resume.pdf"
+            download="Aditya_Makwana_Resume.pdf"
+            className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold hover:shadow-[0_0_40px_hsl(185_100%_50%/0.5)] transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
           >
-            View My Work
+            <Download className="w-5 h-5" />
+            Download Resume
           </a>
           <a
-            href="#contact"
+            href="/certificates.pdf"
+            download="Aditya_Makwana_Certificates.pdf"
+            className="px-8 py-4 border border-primary/30 text-foreground rounded-full font-semibold hover:bg-primary/10 hover:border-primary transition-all duration-300 flex items-center gap-2"
+          >
+            <Download className="w-5 h-5" />
+            Certificates
+          </a>
+          <a
+            href="#projects"
             className="px-8 py-4 border border-primary/30 text-foreground rounded-full font-semibold hover:bg-primary/10 hover:border-primary transition-all duration-300"
           >
-            Get In Touch
+            View My Work
           </a>
         </div>
       </div>

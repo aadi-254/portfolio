@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Makwana - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #0ea5e9;
+        }
+        
+        .header h1 {
+            font-size: 42px;
+            color: #1e293b;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .header .title {
+            font-size: 18px;
+            color: #0ea5e9;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #475569;
+        }
+        
+        .contact-info a {
+            color: #0ea5e9;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            color: #1e293b;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0ea5e9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .summary {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #475569;
+            text-align: justify;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 15px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .stat-box .value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0ea5e9;
+        }
+        
+        .stat-box .label {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        
+        .experience-item, .project-item, .education-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8fafc;
+            border-left: 4px solid #0ea5e9;
+            border-radius: 4px;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        
+        .item-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        
+        .item-subtitle {
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 2px;
+        }
+        
+        .item-duration {
+            font-size: 13px;
+            color: #64748b;
+            font-style: italic;
+        }
+        
+        .item-description {
+            font-size: 14px;
+            color: #475569;
+            margin-top: 8px;
+            line-height: 1.6;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .skill-category {
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .skill-category h4 {
+            font-size: 15px;
+            color: #1e293b;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        
+        .skill-tag {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+        
+        .tech-tag {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+        }
+        
+        .achievement-badge {
+            display: inline-block;
+            background: #dcfce7;
+            color: #166534;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        
+        .hackathon-badge {
+            display: inline-block;
+            background: #fed7aa;
+            color: #9a3412;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+        
+        ul li {
+            margin-bottom: 4px;
+            font-size: 14px;
+            color: #475569;
+        }
+        
+        @media print {
+            body {
+                padding: 20px;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>ADITYA MAKWANA</h1>
+        <div class="title">Full-Stack Developer | Problem Solver | Innovator</div>
+        <div class="contact-info">
+            <span>📧 <a href="mailto:adityamakwana254@gmail.com">adityamakwana254@gmail.com</a></span>
+            <span>💼 <a href="https://www.linkedin.com/in/aditya-makwana-527850280/">LinkedIn</a></span>
+            <span>🐙 <a href="https://github.com/aadi-254">GitHub</a></span>
+            <span>💻 <a href="https://leetcode.com/u/Aditya_Makwana/">LeetCode</a></span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="summary">
+            Passionate Full-Stack Developer with 2+ years of coding experience and a strong foundation in Data Structures & Algorithms. 
+            Proven track record with 1000+ LeetCode problems solved (Rank: 25,000), 4★ HackerRank rating, and extensive project portfolio. 
+            Experienced in building scalable web applications using modern technologies like React.js, Node.js, Express.js, and MySQL. 
+            Demonstrated leadership through hackathon participation (4x Finalist, 1x Winner, 7x Participant) and 1-year industry internship. 
+            Currently pursuing B.Tech in Information Technology with 8.76 CPI at Government Engineering College, Gandhinagar.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Key Achievements</h2>
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="value">15+</div>
+                <div class="label">Projects Completed</div>
+            </div>
+            <div class="stat-box">
+                <div class="value">1000+</div>
+                <div class="label">DSA Problems</div>
+            </div>
+            <div class="stat-box">
+                <div class="value">20+</div>
+                <div class="label">Technologies</div>
+            </div>
+            <div class="stat-box">
+                <div class="value">8.76</div>
+                <div class="label">CPI (Engineering)</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Education</h2>
+        
+        <div class="education-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">Bachelor of Engineering - Information Technology</div>
+                    <div class="item-subtitle">Government Engineering College, Gandhinagar</div>
+                </div>
+                <div class="item-duration">2023 - Present</div>
+            </div>
+            <div class="item-description">
+                <strong>CPI: 8.76/10</strong> | Consistent high performance across semesters
+                <span class="achievement-badge">Current Student</span>
+            </div>
+        </div>
+
+        <div class="education-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">Higher Secondary Education - Science</div>
+                    <div class="item-subtitle">S.N. Vidhyalaya, Surendranagar</div>
+                </div>
+                <div class="item-duration">2022 - 2023</div>
+            </div>
+            <div class="item-description">
+                <strong>Percentile: 80.98 PR</strong>
+            </div>
+        </div>
+
+        <div class="education-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">Secondary Education</div>
+                    <div class="item-subtitle">New Shradhdha Vidhyalaya, Limbdi</div>
+                </div>
+                <div class="item-duration">2020 - 2021</div>
+            </div>
+            <div class="item-description">
+                <strong>Percentile: 98.97 PR</strong>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Professional Experience</h2>
+        
+        <div class="experience-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">Full-Stack Developer Intern</div>
+                    <div class="item-subtitle">iStar Institute, Chandkheda, Ahmedabad</div>
+                </div>
+                <div class="item-duration">April 2024 - March 2025</div>
+            </div>
+            <div class="item-description">
+                <ul>
+                    <li>Developed and maintained full-stack web applications using React.js, Node.js, and MySQL</li>
+                    <li>Collaborated with cross-functional teams to deliver scalable solutions</li>
+                    <li>Gained hands-on experience in real-world software development practices</li>
+                    <li>Implemented responsive designs and optimized application performance</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>🌐 Frontend Development</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">React.js</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">HTML5/CSS3</span>
+                    <span class="skill-tag">Tailwind CSS</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">Three.js</span>
+                    <span class="skill-tag">Next.js</span>
+                    <span class="skill-tag">GSAP</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h4>⚙️ Backend Development</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Express.js</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">Socket.io</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">FastAPI</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h4>💻 Programming Languages</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">C</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h4>🛠️ Tools & Technologies</h4>
+                <div class="skill-tags">
+                    <span class="skill-tag">Git/GitHub</span>
+                    <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">WebRTC</span>
+                    <span class="skill-tag">Google Earth Engine</span>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">AI</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Major Projects - Solo</h2>
+        
+        <div class="project-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">SKILLSWAP - Video Streaming Skill Swapping Platform</div>
+                    <div class="item-subtitle">🔗 <a href="https://github.com/aadi-254/skillSwapper">GitHub</a></div>
+                </div>
+                <span class="achievement-badge">Completed</span>
+            </div>
+            <div class="item-description">
+                A comprehensive platform where users can create profiles, learn new skills, and share expertise through video calls and real-time chat.
+                <div class="tech-stack">
+                    <span class="tech-tag">React.js</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">Socket.io</span>
+                    <span class="tech-tag">WebRTC</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">WhisperLoud - Social Media Platform</div>
+                    <div class="item-subtitle">🔗 <a href="https://github.com/aadi-254/whisperLoud.git">GitHub</a></div>
+                </div>
+                <span class="achievement-badge">Completed</span>
+            </div>
+            <div class="item-description">
+                A full-featured social media website enabling users to share thoughts and interact through posts and comments.
+                <div class="tech-stack">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">EJS</span>
+                    <span class="tech-tag">GSAP</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">Browser Based Operating System (AOS)</div>
+                    <div class="item-subtitle">🔗 <a href="https://github.com/aadi-254/BrowserOS-AOS">GitHub</a></div>
+                </div>
+                <span class="achievement-badge">Completed</span>
+            </div>
+            <div class="item-description">
+                A browser-based operating system with core OS features enabling multiple users to work simultaneously.
+                <div class="tech-stack">
+                    <span class="tech-tag">React.js</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Socket.io</span>
+                    <span class="tech-tag">File Management</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Team Projects & Hackathons</h2>
+        
+        <div class="project-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">Coastal Threat Detection System</div>
+                    <div class="item-subtitle">🔗 <a href="https://github.com/P47Parzival/Coastal-Threat-Alert-System">GitHub</a></div>
+                </div>
+                <span class="hackathon-badge">🏆 HackOut 2025 - DAIICT</span>
+            </div>
+            <div class="item-description">
+                AI-powered coastal monitoring system combining satellite imagery analysis, real-time weather monitoring, and flood risk assessment.
+                <div class="tech-stack">
+                    <span class="tech-tag">React.js</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">Machine Learning</span>
+                    <span class="tech-tag">Google Earth Engine</span>
+                    <span class="tech-tag">Python</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">Susap - AI Interview Assistant</div>
+                    <div class="item-subtitle">🔗 <a href="https://github.com/P47Parzival/Susap">GitHub</a></div>
+                </div>
+                <span class="hackathon-badge">🏆 Hackathon Project</span>
+            </div>
+            <div class="item-description">
+                AI-powered interview preparation platform with personalized questions, real-time feedback, and voice conferencing.
+                <div class="tech-stack">
+                    <span class="tech-tag">React.js</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">AI/ML</span>
+                    <span class="tech-tag">WebRTC</span>
+                    <span class="tech-tag">Voice Recognition</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">Threshold - Urban Development Platform</div>
+                    <div class="item-subtitle">🔗 <a href="https://github.com/P47Parzival/Threshold-Urban-Planner">GitHub</a></div>
+                </div>
+                <span class="hackathon-badge">🏆 NASA Space Hackathon</span>
+            </div>
+            <div class="item-description">
+                Data-driven platform for urban development and service gap analysis to improve city planning and resource allocation.
+                <div class="tech-stack">
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">React.js</span>
+                    <span class="tech-tag">TailwindCSS</span>
+                    <span class="tech-tag">scikit-learn</span>
+                    <span class="tech-tag">pandas</span>
+                    <span class="tech-tag">Google Maps API</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Additional Projects</h2>
+        <div class="item-description">
+            <ul>
+                <li><strong>Design Templates:</strong> Created multiple design animations and 3D web pages using Three.js and GSAP</li>
+                <li><strong>E-commerce Platform:</strong> Buy and Sell item platform with complete CRUD operations</li>
+                <li><strong>Trip Manager:</strong> PHP-based trip planning application with admin panel</li>
+                <li><strong>Game Zone:</strong> Collection of 7+ interactive web-based games</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Certifications & Achievements</h2>
+        <div class="item-description">
+            <ul>
+                <li><strong>LeetCode:</strong> Solved 1000+ problems | Rank: 25,000 | Proficient in JavaScript, Python, DSA</li>
+                <li><strong>HackerRank:</strong> 4★ rating in problem solving</li>
+                <li><strong>Hackathons:</strong> 4x Finalist | 1x Winner | 7x Participant</li>
+                <li><strong>Notable Win:</strong> 2nd Prize at LDRP College Hackathon</li>
+                <li><strong>Notable Finalist:</strong> DA-IICT Hackathon (HackOut 2025)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Areas of Expertise</h2>
+        <div class="item-description">
+            <ul>
+                <li>Full-Stack Web Development (MERN Stack)</li>
+                <li>Real-time Communication (WebRTC, Socket.io)</li>
+                <li>RESTful API Design and Development</li>
+                <li>Database Design and Management (SQL & NoSQL)</li>
+                <li>Data Structures & Algorithms</li>
+                <li>Responsive Web Design & UI/UX Implementation</li>
+                <li>3D Web Development (Three.js)</li>
+                <li>Machine Learning Integration</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

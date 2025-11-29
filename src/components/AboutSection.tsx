@@ -6,10 +6,10 @@ import { Code2, Trophy, Zap, GraduationCap } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { icon: Code2, value: '15+', label: 'Projects Completed' },
-  { icon: Trophy, value: '1000+', label: 'DSA Problems Solved' },
-  { icon: Zap, value: '5★', label: 'HackerRank Rating' },
-  { icon: GraduationCap, value: '8.76', label: 'Engineering CPI' },
+  { icon: Code2, value: '15+', label: 'Projects Completed', link: '' },
+  { icon: Trophy, value: '1000+', label: 'DSA Problems Solved', link: 'https://leetcode.com/u/Aditya_Makwana/' },
+  { icon: Zap, value: '5★', label: 'HackerRank Rating', link: 'https://www.hackerrank.com/profile/adityamakwana254' },
+  { icon: GraduationCap, value: '8.76', label: 'Engineering CPI', link: '' },
 ];
 
 export default function AboutSection() {
@@ -102,18 +102,34 @@ export default function AboutSection() {
           </div>
 
           <div ref={statsRef} className="grid grid-cols-2 gap-6">
-            {stats.map((stat, index) => (
-              <div
-                key={stat.label}
-                className="glass rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 group"
-              >
-                <stat.icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <p className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                  {stat.value}
-                </p>
-                <p className="text-muted-foreground text-sm">{stat.label}</p>
-              </div>
-            ))}
+            {stats.map((stat, index) => {
+              const StatCard = (
+                <div
+                  key={stat.label}
+                  className="glass rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 group"
+                >
+                  <stat.icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
+                  <p className="text-3xl md:text-4xl font-bold text-gradient mb-2">
+                    {stat.value}
+                  </p>
+                  <p className="text-muted-foreground text-sm">{stat.label}</p>
+                </div>
+              );
+
+              return stat.link ? (
+                <a
+                  key={stat.label}
+                  href={stat.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  {StatCard}
+                </a>
+              ) : (
+                StatCard
+              );
+            })}
           </div>
         </div>
       </div>

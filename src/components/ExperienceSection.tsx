@@ -23,20 +23,20 @@ const timeline = [
     description: 'Current CPI: 8.76',
   },
   {
-    icon: Award,
-    title: 'Hackathon Achievements',
-    organization: 'Multiple Events',
-    location: 'India',
-    period: '2024 - Present',
-    description: '1x Winner, 4x Finalist, 7x Participant',
-  },
-  {
     icon: GraduationCap,
     title: 'Higher Secondary (Science)',
     organization: 'S.N. Vidhyalaya, Surendranagar',
     location: 'Gujarat',
     period: '2022 - 2023',
     description: 'Grade: 80.98 PR',
+  },
+  {
+    icon: GraduationCap,
+    title: 'Secondary Education',
+    organization: 'New Shradhdha Vidhyalaya, Limbdi',
+    location: 'Gujarat',
+    period: '2020 - 2021',
+    description: 'Grade: 98.97 PR',
   },
 ];
 

@@ -25,6 +25,10 @@ const skillCategories = [
     title: 'Tools & Others',
     skills: ['Git', 'GitHub', 'WebRTC', 'Machine Learning', 'EJS'],
   },
+  {
+    title: 'Problem Solving',
+    skills: ['DSA','Leetcode','HackerRank'],
+  },
 ];
 
 export default function SkillsSection() {
