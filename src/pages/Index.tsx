@@ -7,13 +7,21 @@ import ProjectsSection from '@/components/ProjectsSection';
 import ExperienceSection from '@/components/ExperienceSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import CustomCursor from '@/components/CustomCursor';
+import FloatingElements from '@/components/FloatingElements';
+import MouseFollowGlow from '@/components/MouseFollowGlow';
+import GridBackground from '@/components/GridBackground';
 
 const Index = () => {
   return (
     <SmoothScroll>
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background relative">
+        <CustomCursor />
+        <GridBackground />
+        <FloatingElements />
+        <MouseFollowGlow />
         <Navbar />
-        <main>
+        <main className="relative z-10">
           <HeroSection />
           <AboutSection />
           <SkillsSection />
