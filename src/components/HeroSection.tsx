@@ -112,7 +112,8 @@ export default function HeroSection() {
           href="https://github.com/aadi-254"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-muted-foreground hover:text-primary transition-colors duration-300"
+          className="text-muted-foreground hover:text-primary transition-colors duration-300 z-99"
+          
         >
           <Github className="w-5 h-5" />
         </a>
