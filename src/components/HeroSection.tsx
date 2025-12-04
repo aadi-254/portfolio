@@ -79,8 +79,8 @@ export default function HeroSection() {
         
         <div ref={ctaRef} className="flex items-center justify-center gap-4 flex-wrap">
           <a
-            href="/Aditya_Makwana_Resume.pdf"
-            download="Aditya_Makwana_Resume.pdf"
+            href="/Resume.pdf"
+            download="Resume.pdf"
             className="px-8 py-4 bg-primary text-primary-foreground rounded-full font-semibold hover:shadow-[0_0_40px_hsl(185_100%_50%/0.5)] transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
           >
             <Download className="w-5 h-5" />
