@@ -16,7 +16,7 @@ const achievements = [
   {
     icon: Trophy,
     title: 'Hackathon Winner',
-    description: 'Hackathons: 4x Finalist, 1x Winner, 7x Participant',
+    description: 'Hackathons: 5x Finalist, 3x Winner, 15x+ Participant',
     details: 'Recognized for innovation and problem-solving skills',
   },
   {
@@ -28,7 +28,7 @@ const achievements = [
   {
     icon: Award,
     title: 'Academic Excellence',
-    description: '8.76 CPI in Engineering',
+    description: '8.83 CGPA in Engineering',
     details: 'Consistent high performance across semesters',
   },
 ];
